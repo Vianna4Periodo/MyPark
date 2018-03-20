@@ -16,6 +16,12 @@ namespace MyPark.Model.DataBase.Models
         public virtual Double ValorHora { get; set; }
         public virtual DateTime DtCadastro { get; set; }
         public virtual int Inativo { get; set; }
+        public virtual IList<Veiculo> Veiculos { get; set; }
+
+        public TipoVeiculo()
+        {
+            this.Veiculos = new List<Veiculo>();
+        }
     }
 
     public class TipoVeiculoMap : ClassMapping<TipoVeiculo>
@@ -29,6 +35,15 @@ namespace MyPark.Model.DataBase.Models
             Property(x => x.ValorHora);
             Property(x => x.DtCadastro);
             Property(x => x.Inativo);
+
+            Bag(x => x.Veiculos, m =>
+            {
+                m.Cascade(Cascade.Detach);
+                m.Lazy(CollectionLazy.Lazy);
+                m.Key(k => k.Column("idTipo"));
+                m.Inverse(true);
+            },
+            r => r.OneToMany());
         }
     }
 }

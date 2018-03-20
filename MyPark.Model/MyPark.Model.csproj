@@ -61,8 +61,14 @@
     <Compile Include="DataBase\Models\TipoVeiculo.cs" />
     <Compile Include="DataBase\Models\User.cs" />
     <Compile Include="DataBase\Models\Veiculo.cs" />
+    <Compile Include="DataBase\Repository\ClienteRepository.cs" />
+    <Compile Include="DataBase\Repository\EstadiaRepository.cs" />
+    <Compile Include="DataBase\Repository\OperadorRepository.cs" />
+    <Compile Include="DataBase\Repository\PlanoRepository.cs" />
     <Compile Include="DataBase\Repository\RepositoryBase.cs" />
+    <Compile Include="DataBase\Repository\TipoVeiculoRepository.cs" />
     <Compile Include="DataBase\Repository\UserRepository.cs" />
+    <Compile Include="DataBase\Repository\VeiculoRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

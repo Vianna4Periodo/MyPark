@@ -15,6 +15,7 @@ namespace MyPark.Model.DataBase.Models
         public virtual String Marca { get; set; }
         public virtual String Modelo { get; set; }
         public virtual String Cor { get; set; }
+        public virtual TipoVeiculo Tipo { get; set; }
     }
 
     public class VeiculoMap : ClassMapping<Veiculo>
@@ -27,6 +28,12 @@ namespace MyPark.Model.DataBase.Models
             Property(x => x.Marca);
             Property(x => x.Modelo);
             Property(x => x.Cor);
+
+            ManyToOne(x => x.Tipo, m =>
+            {
+                m.Column("idTipo");
+                m.Lazy(LazyRelation.NoLazy);
+            });
         }
     }
 }
