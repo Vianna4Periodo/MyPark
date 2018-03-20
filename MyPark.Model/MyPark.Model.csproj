@@ -54,7 +54,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataBase\DbFactory.cs" />
+    <Compile Include="DataBase\Models\Cliente.cs" />
+    <Compile Include="DataBase\Models\Estadia.cs" />
+    <Compile Include="DataBase\Models\Operador.cs" />
+    <Compile Include="DataBase\Models\Plano.cs" />
+    <Compile Include="DataBase\Models\TipoVeiculo.cs" />
     <Compile Include="DataBase\Models\User.cs" />
+    <Compile Include="DataBase\Models\Veiculo.cs" />
     <Compile Include="DataBase\Repository\RepositoryBase.cs" />
     <Compile Include="DataBase\Repository\UserRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

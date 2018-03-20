@@ -13,6 +13,7 @@ namespace MyPark.Model.DataBase.Models
         public virtual Guid Id { get; set; }
         public virtual String Login { get; set; }
         public virtual String Senha { get; set; }
+        public virtual Operador Operador { get; set; }
     }
 
     public class UserMap : ClassMapping<User>
@@ -23,6 +24,13 @@ namespace MyPark.Model.DataBase.Models
 
             Property(x => x.Login);
             Property(x => x.Senha);
+
+            OneToOne(x => x.Operador, m =>
+            {
+                m.PropertyReference(typeof(Operador).GetProperty("Usuario"));
+                m.Lazy(LazyRelation.NoLazy);
+                m.Cascade(Cascade.Persist);
+            });
         }
     }
 }

@@ -47,7 +47,7 @@ namespace MyPark.Model.DataBase
                 var port = "3306";
                 var dbName = "mypark";
                 var user = "root";
-                var psw = "admin";
+                var psw = "root";
 
                 var stringConexao = "Persist Security Info=False;server=" + server + ";port=" + port + ";database=" +
                                     dbName + ";uid=" + user + ";pwd=" + psw;
