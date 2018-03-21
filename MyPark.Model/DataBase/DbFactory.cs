@@ -24,13 +24,25 @@ namespace MyPark.Model.DataBase
         private ISessionFactory _sessionFactory;
 
         public UserRepository UserRepository { get; set; }
+        public ClienteRepository ClienteRepository { get; set; }
+        public EstadiaRepository EstadiaRepository { get; set; }
+        public OperadorRepository OperadorRepository { get; set; }
+        public PlanoRepository PlanoRepository { get; set; }
+        public TipoVeiculoRepository TipoVeiculoRepository { get; set; }
+        public VeiculoRepository VeiculoRepository { get; set; }
 
         private DbFactory()
         {
             Conectar();
 
+            this.ClienteRepository = new ClienteRepository(this.Session);
+            this.EstadiaRepository = new EstadiaRepository(this.Session);
+            this.OperadorRepository = new OperadorRepository(this.Session);
+            this.PlanoRepository = new PlanoRepository(this.Session);
+            this.TipoVeiculoRepository = new TipoVeiculoRepository(this.Session);
+            this.VeiculoRepository = new VeiculoRepository(this.Session);
             this.UserRepository = new UserRepository(this.Session);
-        }        
+        }
 
         public static DbFactory Instance => _instance ?? (_instance = new DbFactory());
 
