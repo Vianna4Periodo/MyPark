@@ -56,6 +56,7 @@
     <Compile Include="DataBase\DbFactory.cs" />
     <Compile Include="DataBase\Models\Cliente.cs" />
     <Compile Include="DataBase\Models\Estadia.cs" />
+    <Compile Include="DataBase\Models\Livro.cs" />
     <Compile Include="DataBase\Models\Operador.cs" />
     <Compile Include="DataBase\Models\Plano.cs" />
     <Compile Include="DataBase\Models\TipoVeiculo.cs" />
@@ -63,6 +64,7 @@
     <Compile Include="DataBase\Models\Veiculo.cs" />
     <Compile Include="DataBase\Repository\ClienteRepository.cs" />
     <Compile Include="DataBase\Repository\EstadiaRepository.cs" />
+    <Compile Include="DataBase\Repository\LivroRepository.cs" />
     <Compile Include="DataBase\Repository\OperadorRepository.cs" />
     <Compile Include="DataBase\Repository\PlanoRepository.cs" />
     <Compile Include="DataBase\Repository\RepositoryBase.cs" />

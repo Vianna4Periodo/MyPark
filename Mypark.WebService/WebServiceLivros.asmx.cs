@@ -35,8 +35,20 @@ namespace Mypark.WebService
         [WebMethod]
         public Livro AtualizarLivro(Livro livro)
         {
-            livro = DbFactory.Instance.LivroRepository.SaveOrUpdate(livro);
-            return livro;
+            var t = DbFactory.Instance.LivroRepository.SaveOrUpdate(livro);
+
+            if (livro == null)
+            {
+                t.Titulo = livro.Titulo;
+                t.Autor = livro.Autor;
+                t.ISBN = livro.ISBN;
+                t.Editora = livro.Editora;
+            }
+            else {
+                livro = DbFactory.Instance.LivroRepository.Save(t);
+            }
+
+            return t;
         }
 
         [WebMethod]
