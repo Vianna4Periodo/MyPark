@@ -44,5 +44,13 @@ namespace Mypark.WebService
         {
             return DbFactory.Instance.VeiculoRepository.FindAll().ToList();
         }
+
+        // CRUD Livros
+
+        [WebMethod]
+        public List<Livro> ListaLivros()
+        {
+            
+        }
     }
 }

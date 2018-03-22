@@ -30,6 +30,7 @@ namespace MyPark.Model.DataBase
         public PlanoRepository PlanoRepository { get; set; }
         public TipoVeiculoRepository TipoVeiculoRepository { get; set; }
         public VeiculoRepository VeiculoRepository { get; set; }
+        public LivroRepository LivroRepository { get; set; }
 
         private DbFactory()
         {
@@ -42,6 +43,7 @@ namespace MyPark.Model.DataBase
             this.TipoVeiculoRepository = new TipoVeiculoRepository(this.Session);
             this.VeiculoRepository = new VeiculoRepository(this.Session);
             this.UserRepository = new UserRepository(this.Session);
+            this.LivroRepository = new LivroRepository(this.Session);
         }
 
         public static DbFactory Instance => _instance ?? (_instance = new DbFactory());
