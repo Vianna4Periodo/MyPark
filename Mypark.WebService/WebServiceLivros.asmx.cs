@@ -45,7 +45,7 @@ namespace Mypark.WebService
                 t.Editora = livro.Editora;
             }
             else {
-                livro = DbFactory.Instance.LivroRepository.Save(t);
+                t = DbFactory.Instance.LivroRepository.Save(t);
             }
 
             return t;
