@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyPark.Model.DataBase;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,6 +12,7 @@ namespace MyPark.Controllers
         // GET: Admin
         public ActionResult TipoVeiculo()
         {
+            var tipoVeiculos = DbFactory
             return View();
         }
     }
