@@ -12,8 +12,8 @@ namespace MyPark.Controllers
         // GET: Admin
         public ActionResult TipoVeiculo()
         {
-            var tipoVeiculos = DbFactory
-            return View();
+            var tipoVeiculos = DbFactory.Instance.TipoVeiculoRepository.FindAll();
+            return View(tipoVeiculos);
         }
     }
 }
