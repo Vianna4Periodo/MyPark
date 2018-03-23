@@ -14,6 +14,7 @@ namespace MyPark.Model.DataBase.Models
         public virtual String Login { get; set; }
         public virtual String Senha { get; set; }
         public virtual Operador Operador { get; set; }
+        // public virtual Cliente Cliente { get; set; }
     }
 
     public class UserMap : ClassMapping<User>
@@ -31,6 +32,12 @@ namespace MyPark.Model.DataBase.Models
                 m.Lazy(LazyRelation.NoLazy);
                 m.Cascade(Cascade.Persist);
             });
+
+            //OneToOne(x => x.Cliente, m =>
+            //{
+            //    m.PropertyReference(typeof(Cliente).GetProperty("Usuario"));
+            //    m.Lazy(LazyRelation.NoLazy);
+            //});
         }
     }
 }

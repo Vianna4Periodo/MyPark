@@ -30,8 +30,9 @@ namespace MyPark.Model.DataBase.Models
             ManyToOne(x => x.Usuario, m => {
                 m.Column("idUsuario");
                 m.Unique(true);
-                m.NotNullable(true);
+                //m.NotNullable(true);
                 m.Lazy(LazyRelation.NoLazy);
+                m.Cascade(Cascade.Persist);
             });
         }
     }
