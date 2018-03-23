@@ -1,4 +1,5 @@
 ﻿using MyPark.Model.DataBase;
+using MyPark.Model.DataBase.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,17 @@ namespace MyPark.Controllers
         {
             var tipoVeiculos = DbFactory.Instance.TipoVeiculoRepository.FindAll();
             return View(tipoVeiculos);
+        }
+
+        public ActionResult AddTipoVeiculo()
+        {
+            return View(new TipoVeiculo());
+        }
+
+        public ActionResult GravarTipoVeiculo(TipoVeiculo tipoVeiculo)
+        {
+            DbFactory.Instance.TipoVeiculoRepository.SaveOrUpdate(tipoVeiculo);
+            return RedirectToAction("TipoVeiculo");
         }
     }
 }
