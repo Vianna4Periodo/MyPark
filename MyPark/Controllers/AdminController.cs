@@ -22,10 +22,10 @@ namespace MyPark.Controllers
             return View(new TipoVeiculo());
         }
 
-        public ActionResult GravarTipoVeiculo(TipoVeiculo tipoVeiculo)
+        public PartialViewResult GravarTipoVeiculo(TipoVeiculo tipoVeiculo)
         {
             DbFactory.Instance.TipoVeiculoRepository.SaveOrUpdate(tipoVeiculo);
-            return RedirectToAction("TipoVeiculo");
+            return PartialView("_TabelaTipoVeiculo", DbFactory.Instance.TipoVeiculoRepository.FindAll());
         }
     }
 }

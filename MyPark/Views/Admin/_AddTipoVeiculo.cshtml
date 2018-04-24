@@ -1,13 +1,11 @@
 ﻿@model MyPark.Model.DataBase.Models.TipoVeiculo
 
-@{
-    ViewBag.Title = "AddTipoVeiculo";
-}
-
-<h2>AddTipoVeiculo</h2>
-
-
-@using (Html.BeginForm("GravarTipoVeiculo", "Admin", FormMethod.Post))
+@using (Ajax.BeginForm("GravarTipoVeiculo", "Admin", new AjaxOptions() {
+    HttpMethod = "post",
+    InsertionMode = InsertionMode.Replace,
+    UpdateTargetId = "tblTipoVeiculo",
+    LoadingElementId = "loadAjax",
+}))
 {
     @Html.AntiForgeryToken()
     
